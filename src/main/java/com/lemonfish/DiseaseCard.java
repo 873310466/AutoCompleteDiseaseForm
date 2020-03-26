@@ -1,4 +1,5 @@
 package com.lemonfish;
+import	java.util.Random;
 import	java.util.Scanner;
 
 import org.openqa.selenium.By;
@@ -6,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
-import javax.servlet.ServletOutputStream;
 
 /**
  * @author Chao Zhang
@@ -17,6 +16,7 @@ import javax.servlet.ServletOutputStream;
  */
 public class DiseaseCard {
     public static void main(String[] args) throws InterruptedException {
+
         Scanner in = new Scanner(System.in);
         // 需要填写的信息
         System.out.println("请输入你的名字");
@@ -32,7 +32,11 @@ public class DiseaseCard {
         if ("9".equals(url)) {
             url = "https://www.wjx.cn/jq/61862730.aspx";
         }
+        autoCompleteForm(name, temperature, username, password, url);
 
+    }
+
+    private static void autoCompleteForm(String name, String temperature, String username, String password, String url) throws InterruptedException {
         // 设置webdriver路径
         System.setProperty("webdriver.chrome.driver", DiseaseCard.class.getClassLoader().getResource("chromedriver.exe").getPath());
         WebDriver webDriver = new ChromeDriver();
@@ -54,9 +58,12 @@ public class DiseaseCard {
         webDriver.switchTo().defaultContent();
         webDriver.findElement(By.xpath("//*[@id=\"divquestion5\"]/ul/li[1]/a")).click();
         webDriver.findElement(By.xpath("//*[@id=\"divquestion7\"]/ul/li[5]/a\n")).click();
-        // 停止10S，模拟自己填写的情况
-        Thread.sleep(10000);
+        // 停止15-20S，模拟自己填写的情况
+        Random rand = new Random();
+        long doneTime = rand.nextInt(5000)+15000;
+        Thread.sleep(doneTime);
         webDriver.findElement(By.className("submitbutton")).click();
+
         Thread.sleep(1000);
 
 
@@ -94,8 +101,6 @@ public class DiseaseCard {
                 select2.selectByValue("无");
             }
         }
-        // 停止10S，模拟自己填写的情况
-        Thread.sleep(10000);
         webDriver.findElement(By.xpath("/html/body/div/div/div/button")).click();
     }
 }
