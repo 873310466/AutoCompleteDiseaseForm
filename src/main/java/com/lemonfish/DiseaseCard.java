@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.servlet.ServletOutputStream;
+
 /**
  * @author Chao Zhang
  * @version V1.0 安全版
@@ -25,12 +27,17 @@ public class DiseaseCard {
         String username = in.next();
         System.out.println("请输入你云成长的密码");
         String password = in.next();
-
+        System.out.println("因为每个班级的问卷调查网址不同，请输入问卷调查完整网址（建议复制）:\n\r(软件1809班同学输入 9 即可)");
+        String url = in.next();
+        if ("9".equals(url)) {
+            url = "https://www.wjx.cn/jq/61862730.aspx";
+        }
 
         // 设置webdriver路径
         System.setProperty("webdriver.chrome.driver", DiseaseCard.class.getClassLoader().getResource("chromedriver.exe").getPath());
         WebDriver webDriver = new ChromeDriver();
-        webDriver.get("https://www.wjx.cn/jq/61862730.aspx");
+
+        webDriver.get(url);
 
 
         // 问卷调查
@@ -47,8 +54,10 @@ public class DiseaseCard {
         webDriver.switchTo().defaultContent();
         webDriver.findElement(By.xpath("//*[@id=\"divquestion5\"]/ul/li[1]/a")).click();
         webDriver.findElement(By.xpath("//*[@id=\"divquestion7\"]/ul/li[5]/a\n")).click();
+        // 停止10S，模拟自己填写的情况
+        Thread.sleep(10000);
         webDriver.findElement(By.className("submitbutton")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
 
         // 云成长
@@ -85,7 +94,8 @@ public class DiseaseCard {
                 select2.selectByValue("无");
             }
         }
-        Thread.sleep(20000);
+        // 停止10S，模拟自己填写的情况
+        Thread.sleep(10000);
         webDriver.findElement(By.xpath("/html/body/div/div/div/button")).click();
     }
 }

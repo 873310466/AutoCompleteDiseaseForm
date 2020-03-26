@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40e54e74-8254-4d6a-8a17-a975c5ba548f" name="Default Changelist" comment="" />
+    <list default="true" id="40e54e74-8254-4d6a-8a17-a975c5ba548f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lemonfish/DiseaseCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lemonfish/DiseaseCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lemonfish/DiseaseCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lemonfish/DiseaseCard.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585218298132</updated>
-      <workItem from="1585218299511" duration="1069000" />
+      <workItem from="1585218299511" duration="2597000" />
     </task>
     <servers />
   </component>
@@ -107,5 +110,9 @@
       <screen x="72" y="0" width="1976" height="1152" />
     </state>
     <state x="446" y="94" key="SettingsEditor/2632.162.1464.864/72.0.1976.1152@72.0.1976.1152" timestamp="1585218515676" />
+    <state x="553" y="244" key="Vcs.Push.Dialog.v2" timestamp="1585219805800">
+      <screen x="72" y="0" width="1976" height="1152" />
+    </state>
+    <state x="553" y="244" key="Vcs.Push.Dialog.v2/2632.162.1464.864/72.0.1976.1152@72.0.1976.1152" timestamp="1585219805800" />
   </component>
 </project>
