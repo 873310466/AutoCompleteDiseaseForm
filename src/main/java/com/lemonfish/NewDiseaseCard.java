@@ -17,11 +17,11 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/3/26 16:34
  */
 public class NewDiseaseCard {
-
-    public static final String USERNAME = "20180824";
-    public static final String PASSWORD = "123456as";
+    // 个人信息
+    public static final String USERNAME = "your username";
+    public static final String PASSWORD = "your password";
     public static final String QUERY_URL = "https://www.wjx.cn/jq/61862730.aspx";
-    public static final String NAME = "张超";
+    public static final String NAME = "your name";
     public static final String WEBDRIVER_CHROME_DRIVER = "webdriver.chrome.driver";
 
     public static void main(String[] args) throws InterruptedException {

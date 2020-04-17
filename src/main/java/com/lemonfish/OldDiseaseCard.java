@@ -4,9 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 /**
  * @author Chao Zhang
@@ -14,18 +12,18 @@ import org.openqa.selenium.support.ui.Select;
  * @Package com.lemonfish.disease
  * @date 2020/3/26 16:34
  */
-public class DiseaseCard {
-
-    public static final String USERNAME = "20180824";
-    public static final String PASSWORD = "209304";
+public class OldDiseaseCard {
+    // 个人信息
+    public static final String USERNAME = "your username";
+    public static final String PASSWORD = "your password";
     public static final String QUERY_URL = "https://www.wjx.cn/jq/61862730.aspx";
-    public static final String NAME = "张超";
+    public static final String NAME = "your name";
     public static final String WEBDRIVER_CHROME_DRIVER = "webdriver.chrome.driver";
 
     public static void main(String[] args) throws InterruptedException {
 //209304
         Scanner in = new Scanner(System.in);
-        Map<String, String> map = new HashMap<>();
+
         // 需要填写的信息
 //        System.out.println("请输入你的名字");
 //        String name = in.next();
@@ -46,7 +44,7 @@ public class DiseaseCard {
 
     private static void autoCompleteForm(String name, String temperature, String username, String password, String url) throws InterruptedException {
         // 设置webdriver路径
-        System.setProperty(WEBDRIVER_CHROME_DRIVER, DiseaseCard.class.getClassLoader().getResource("chromedriver.exe").getPath());
+        System.setProperty(WEBDRIVER_CHROME_DRIVER, OldDiseaseCard.class.getClassLoader().getResource("chromedriver.exe").getPath());
 
         WebDriver webDriver = new ChromeDriver();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
